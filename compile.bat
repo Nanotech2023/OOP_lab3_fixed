@@ -1,0 +1,1 @@
+javac -cp ./src/main/java src/main/java/com/company/Main.java -Xlint -d target || pause && exit 1
