@@ -3,7 +3,6 @@ package com.company;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
-//TODO import org.apache.commons.lang.StringUtils;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -66,7 +65,7 @@ public class INIConfig{
                     throw new DataFormatException(String.format(
                             "Error while reading ini file: label \"%s\" is broken",
                             line));
-                String name = line.substring(1, line.indexOf(']')); // TODO String name = StringUtils.substringBetween(line, "[", "]");
+                String name = line.substring(1, line.indexOf(']'));
                 if (name.contains(" "))
                     throw new DataFormatException(String.format(
                             "Error while reading ini file: label \"%s\" contain spaces",
@@ -99,7 +98,6 @@ public class INIConfig{
     	return Collections.unmodifiableList(new ArrayList<INISection>(sections_.values()));
     }
 
-    // FIXME: for what? - want it
     public int size() {
         return sections_.size();
     }
@@ -121,7 +119,6 @@ public class INIConfig{
         file.close();
     }
 
-    // FIXME: consider using INI-format, not a home-made custom one - want it so
     public String toString() {
         String ans = "[[[\n";
         int i = 0;
